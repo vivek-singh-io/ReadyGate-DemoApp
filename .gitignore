@@ -1,0 +1,103 @@
+# ==========================================
+# ReadyGate DemoApp - Git Ignore
+# Angular + .NET
+# ==========================================
+
+# ---------- OS ----------
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ---------- IDE / Editors ----------
+.vscode/
+.idea/
+*.user
+*.userosscache
+*.suo
+*.njsproj
+*.sln.docstates
+
+# Visual Studio
+.vs/
+*.rsuser
+
+# ---------- .NET ----------
+**/bin/
+**/obj/
+**/TestResults/
+*.dll
+*.exe
+*.pdb
+*.cache
+
+# .NET generated files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ---------- Angular / Node ----------
+**/node_modules/
+**/dist/
+**/.angular/
+.nx/
+.angular/
+
+# npm logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Angular cache
+**/.cache/
+
+# ---------- Coverage ----------
+coverage/
+**/coverage/
+*.coverage
+*.coveragexml
+
+# ---------- Test / Reports ----------
+TestResults/
+*.trx
+*.log
+
+# ---------- Environment / Secrets ----------
+.env
+.env.*
+!.env.example
+
+# Local configuration
+appsettings.Local.json
+appsettings.Development.local.json
+appsettings.*.local.json
+
+# Certificates / private keys
+*.pfx
+*.p12
+*.pem
+*.key
+*.crt
+
+# ---------- SQLite / Local Database ----------
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# ---------- Temporary files ----------
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# ---------- Generated ReadyGate artifacts ----------
+# Keep the directory structure, but do not accidentally
+# commit local/generated secrets.
+.readygate/**/secrets/
+.readygate/**/.env
+
+# ---------- Local tooling ----------
+*.local
