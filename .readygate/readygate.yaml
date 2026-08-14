@@ -1,0 +1,147 @@
+schemaVersion: "1.1"
+profileVersion: "1.1.0-demoapp-draft"
+stack:
+  languages:
+    - name: CSharp
+      version: "13"
+    - name: TypeScript
+      version: "6.0"
+  frameworks:
+    - name: dotnet
+      version: "9"
+    - name: Angular
+      version: "22.1"
+  packageManagers: [NuGet, npm]
+  dependencyManifests:
+    - src/backend/ReadyGate.Showcase.Api/ReadyGate.Showcase.Api.csproj
+    - src/frontend/readygate-showcase-client/package.json
+paths:
+  sourceRoots:
+    - src/backend/ReadyGate.Showcase.Api
+    - src/frontend/readygate-showcase-client/src/app
+  testRoots:
+    - tests/backend
+    - src/frontend/readygate-showcase-client/src/app
+    - tests/xray
+  specRoots:
+    - docs
+  migrationRoots:
+    - src/backend/ReadyGate.Showcase.Api/Infrastructure/Persistence/Migrations
+  sqlRoots:
+    - src/backend/ReadyGate.Showcase.Api/Infrastructure/Persistence/Sql
+  seedRoots:
+    - src/backend/ReadyGate.Showcase.Api/Infrastructure/Seed
+architecture:
+  documents:
+    - docs/fixture-manifest.md
+    - docs/reference-implementations.md
+    - .readygate/READYGATE.md
+  layers:
+    - id: backend-endpoints
+      paths: [src/backend/ReadyGate.Showcase.Api/Endpoints]
+    - id: backend-services
+      paths: [src/backend/ReadyGate.Showcase.Api/Services]
+    - id: backend-authorization
+      paths: [src/backend/ReadyGate.Showcase.Api/Authorization]
+    - id: backend-persistence
+      paths: [src/backend/ReadyGate.Showcase.Api/Infrastructure/Persistence]
+    - id: frontend-ticket-feature
+      paths: [src/frontend/readygate-showcase-client/src/app/tickets]
+    - id: frontend-core
+      paths: [src/frontend/readygate-showcase-client/src/app/core]
+    - id: frontend-shared
+      paths: [src/frontend/readygate-showcase-client/src/app/shared]
+database:
+  dialect: SQLite
+  version: "3"
+  migrationMechanism: EF Core migrations
+  schemaOwnership: ReadyGate Showcase API
+  rollbackPolicy: supported
+  transactionPolicy: One migration transaction where provider supports it
+  destructiveChangesRequireApproval: true
+testing:
+  frontend:
+    framework: Vitest with Angular TestBed
+    roots: [src/frontend/readygate-showcase-client/src/app]
+    namingPattern: "*.spec.ts"
+    fixturePattern: Typed fictional local fixtures
+    mockingPattern: Angular dependency-injection stubs
+    assertionPattern: expect
+  backend:
+    framework: xUnit
+    roots: [tests/backend]
+    namingPattern: "*Tests.cs"
+    fixturePattern: WebApplicationFactory with deterministic fictional seed data
+    mockingPattern: Application-interface fakes
+    assertionPattern: Assert
+  database:
+    framework: xUnit with isolated SQLite
+    roots: [tests/backend]
+    namingPattern: "*PersistenceTests.cs"
+    fixturePattern: Fresh isolated SQLite database per test
+  qaXray:
+    framework: Cucumber/Gherkin
+    roots: [tests/xray]
+    namingPattern: "*.feature"
+    importFormat: Xray Cucumber
+generation:
+  minimumStyleReferences: 2
+  excludedReferenceGlobs:
+    - "**/bin/**"
+    - "**/obj/**"
+    - "**/node_modules/**"
+    - "**/dist/**"
+    - "**/*.generated.*"
+    - ".readygate/**"
+  newDependenciesAllowed: false
+  styleDimensions:
+    - structure
+    - naming
+    - dependency-injection
+    - async
+    - errors
+    - logging
+    - authorization
+    - data-access
+    - fixtures
+    - mocking
+    - assertions
+validation:
+  commands:
+    - id: backend-tests
+      command: dotnet test ReadyGate.Showcase.slnx
+      workingDirectory: src/backend
+      safeForGeneratedWorkspace: true
+    - id: frontend-tests
+      command: npm test -- --watch=false
+      workingDirectory: src/frontend/readygate-showcase-client
+      safeForGeneratedWorkspace: true
+    - id: frontend-build
+      command: npm run build
+      workingDirectory: src/frontend/readygate-showcase-client
+      safeForGeneratedWorkspace: true
+capabilities:
+  - specification
+  - starter-code
+  - sql-migrations
+  - frontend-tests
+  - backend-tests
+  - database-tests
+  - qa-xray-cases
+conventions:
+  backend: Keep endpoints thin; place ticket behavior in injected services and authorization in explicit policies.
+  frontend: Use Angular standalone feature components, typed services, permission guards, and shared empty states.
+  database: Use EF Core migrations for SQLite; generated migrations are reviewed and never executed by ReadyGate.
+  fixtures: Use fictional customers and tickets only; intentional gaps must remain documented in the fixture manifest.
+approvedPrecedents: []
+ownership:
+  defaultReviewers: [vivek-singh-io, GajapathiKS]
+prohibitedPaths:
+  - .git
+  - .env
+  - bin
+  - obj
+  - node_modules
+  - dist
+  - src/backend/ReadyGate.Showcase.Api/appsettings.Production.json
+
