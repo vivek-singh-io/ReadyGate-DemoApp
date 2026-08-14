@@ -3,6 +3,7 @@ import { RenderMode, ServerRoute } from '@angular/ssr';
 export const serverRoutes: ServerRoute[] = [
   {
     path: '**',
-    renderMode: RenderMode.Prerender
+    // Ticket data is authenticated runtime state; do not invoke the API during build-time prerendering.
+    renderMode: RenderMode.Client
   }
 ];
