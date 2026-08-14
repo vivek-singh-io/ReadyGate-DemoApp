@@ -1,0 +1,2 @@
+-- SCRUM-9; context=7149814cd2d3675d037545d054f12be2e02faa2b085277c3de97c7911a1602ce; GENERATED DRAFT deterministic test seed only
+INSERT OR IGNORE INTO ReadyGateGeneratedAudit(Id, WorkItemKey) VALUES ('seed-SCRUM-9', 'SCRUM-9');

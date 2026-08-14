@@ -1,0 +1,360 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "b0404235-f7e9-4858-a774-8f882ba40638",
+  "generationContextHash": "7149814cd2d3675d037545d054f12be2e02faa2b085277c3de97c7911a1602ce",
+  "repository": "vivek-singh-io/ReadyGate-DemoApp",
+  "revision": "148c85a89845637d8738829125b24dc4a6139ef2",
+  "branch": "SCRUM-9-ticket-draft-filter-ticket-list-by-status-and-priority-148c85a",
+  "generatorVersion": "readygate-sdd-v1",
+  "capabilityVersion": "angular-dotnet-v1",
+  "createdAt": "2026-08-14T13:54:54.3697024+00:00",
+  "generatedBy": "demo-user",
+  "artifacts": [
+    {
+      "path": ".readygate/SCRUM-9/spec.md",
+      "family": "specification",
+      "contentHash": "af8cd4dcde105eb5d4a6343764cb1a796ea0095eaed5665c7e08f6a4474d506f",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003"
+      ],
+      "acceptanceScenarioIds": [
+        "US1-AS1",
+        "US1-AS2"
+      ],
+      "styleReferencePaths": [
+        "docs/architecture.md"
+      ],
+      "destructive": false,
+      "rollbackPath": null,
+      "validationResults": [
+        {
+          "commandId": "readygate-non-executing-syntax",
+          "status": "passed",
+          "reason": null
+        },
+        {
+          "commandId": "repository-validation",
+          "status": "not-run",
+          "reason": "Human-controlled repository validation is required before merge."
+        }
+      ]
+    },
+    {
+      "path": ".readygate/SCRUM-9/code/SCRUM9Service.cs",
+      "family": "starter-code",
+      "contentHash": "a2839bd7fad4c061b0ec82b7816930707c2c311061afb8ad71754c70bcabf75a",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003"
+      ],
+      "acceptanceScenarioIds": [
+        "US1-AS1",
+        "US1-AS2"
+      ],
+      "styleReferencePaths": [
+        "src/backend/ReadyGate.Showcase.Api/Authorization/DemoPermissionService.cs"
+      ],
+      "destructive": false,
+      "rollbackPath": null,
+      "validationResults": [
+        {
+          "commandId": "readygate-non-executing-syntax",
+          "status": "passed",
+          "reason": null
+        },
+        {
+          "commandId": "repository-validation",
+          "status": "not-run",
+          "reason": "Human-controlled repository validation is required before merge."
+        }
+      ]
+    },
+    {
+      "path": ".readygate/SCRUM-9/migrations/SCRUM_9_ReadyGateDraft.cs",
+      "family": "sql-migration",
+      "contentHash": "c1951f529515447a126fb0d0cda0396d2c5a1943809b6e5f405348042605cc17",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003"
+      ],
+      "acceptanceScenarioIds": [
+        "US1-AS1",
+        "US1-AS2"
+      ],
+      "styleReferencePaths": [
+        "src/backend/ReadyGate.Showcase.Api/Infrastructure/Persistence/Migrations/202608140001_InitialShowcaseSchema.Designer.cs",
+        "src/backend/ReadyGate.Showcase.Api/Infrastructure/Persistence/Migrations/202608140001_InitialShowcaseSchema.Designer.cs"
+      ],
+      "destructive": false,
+      "rollbackPath": ".readygate/SCRUM-9/sql/001_SCRUM_9.rollback.sql",
+      "validationResults": [
+        {
+          "commandId": "readygate-non-executing-syntax",
+          "status": "passed",
+          "reason": null
+        },
+        {
+          "commandId": "repository-validation",
+          "status": "not-run",
+          "reason": "Human-controlled repository validation is required before merge."
+        }
+      ]
+    },
+    {
+      "path": ".readygate/SCRUM-9/sql/001_SCRUM_9.sql",
+      "family": "sql-migration",
+      "contentHash": "c070dd6a95350148961dfa0c183014a642e0b4733facb04f201237768f8ce4c6",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003"
+      ],
+      "acceptanceScenarioIds": [
+        "US1-AS1",
+        "US1-AS2"
+      ],
+      "styleReferencePaths": [
+        "src/backend/ReadyGate.Showcase.Api/Infrastructure/Persistence/Migrations/202608140001_InitialShowcaseSchema.Designer.cs",
+        "src/backend/ReadyGate.Showcase.Api/Infrastructure/Persistence/Migrations/202608140001_InitialShowcaseSchema.Designer.cs"
+      ],
+      "destructive": false,
+      "rollbackPath": ".readygate/SCRUM-9/sql/001_SCRUM_9.rollback.sql",
+      "validationResults": [
+        {
+          "commandId": "readygate-non-executing-syntax",
+          "status": "passed",
+          "reason": null
+        },
+        {
+          "commandId": "repository-validation",
+          "status": "not-run",
+          "reason": "Human-controlled repository validation is required before merge."
+        }
+      ]
+    },
+    {
+      "path": ".readygate/SCRUM-9/sql/001_SCRUM_9.rollback.sql",
+      "family": "sql-migration",
+      "contentHash": "49ec63b0fb318643e6847fb2b93690dc1b8a17b3aabaf118f91c6c5fb4e633bc",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003"
+      ],
+      "acceptanceScenarioIds": [
+        "US1-AS1",
+        "US1-AS2"
+      ],
+      "styleReferencePaths": [
+        "src/backend/ReadyGate.Showcase.Api/Infrastructure/Persistence/Migrations/202608140001_InitialShowcaseSchema.Designer.cs",
+        "src/backend/ReadyGate.Showcase.Api/Infrastructure/Persistence/Migrations/202608140001_InitialShowcaseSchema.Designer.cs"
+      ],
+      "destructive": false,
+      "rollbackPath": null,
+      "validationResults": [
+        {
+          "commandId": "readygate-non-executing-syntax",
+          "status": "passed",
+          "reason": null
+        },
+        {
+          "commandId": "repository-validation",
+          "status": "not-run",
+          "reason": "Human-controlled repository validation is required before merge."
+        }
+      ]
+    },
+    {
+      "path": ".readygate/SCRUM-9/sql/seed/SCRUM_9_seed.sql",
+      "family": "sql-migration",
+      "contentHash": "bd5218be0bf42c4bfc7329dafac23e267b657b159cfeae56ba1ac35339c4903f",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003"
+      ],
+      "acceptanceScenarioIds": [
+        "US1-AS1",
+        "US1-AS2"
+      ],
+      "styleReferencePaths": [
+        "src/backend/ReadyGate.Showcase.Api/Infrastructure/Persistence/Migrations/202608140001_InitialShowcaseSchema.Designer.cs",
+        "src/backend/ReadyGate.Showcase.Api/Infrastructure/Persistence/Migrations/202608140001_InitialShowcaseSchema.Designer.cs"
+      ],
+      "destructive": false,
+      "rollbackPath": null,
+      "validationResults": [
+        {
+          "commandId": "readygate-non-executing-syntax",
+          "status": "passed",
+          "reason": null
+        },
+        {
+          "commandId": "repository-validation",
+          "status": "not-run",
+          "reason": "Human-controlled repository validation is required before merge."
+        }
+      ]
+    },
+    {
+      "path": ".readygate/SCRUM-9/tests/database/SCRUM_9DatabaseTests.cs",
+      "family": "database-test",
+      "contentHash": "87251d818162f69e4c19639956bdccd1d4a9ea64c7747aa5e02498bcc5e1f905",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003"
+      ],
+      "acceptanceScenarioIds": [
+        "US1-AS1",
+        "US1-AS2"
+      ],
+      "styleReferencePaths": [
+        "src/backend/ReadyGate.Showcase.Api/Infrastructure/Persistence/Migrations/202608140001_InitialShowcaseSchema.Designer.cs",
+        "src/backend/ReadyGate.Showcase.Api/Infrastructure/Persistence/Migrations/202608140001_InitialShowcaseSchema.Designer.cs"
+      ],
+      "destructive": false,
+      "rollbackPath": null,
+      "validationResults": [
+        {
+          "commandId": "readygate-non-executing-syntax",
+          "status": "passed",
+          "reason": null
+        },
+        {
+          "commandId": "repository-validation",
+          "status": "not-run",
+          "reason": "Human-controlled repository validation is required before merge."
+        }
+      ]
+    },
+    {
+      "path": "src/frontend/readygate-showcase-client/src/app/core/services/scrum-9.spec.ts",
+      "family": "frontend-test",
+      "contentHash": "8026b5d7cef4d82e97e20bb5ff7c7cef536e7ae2c8450f4b61fb832ba50b8202",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003"
+      ],
+      "acceptanceScenarioIds": [
+        "US1-AS1",
+        "US1-AS2"
+      ],
+      "styleReferencePaths": [
+        "src/frontend/readygate-showcase-client/src/app/core/services/ticket-api.service.spec.ts"
+      ],
+      "destructive": false,
+      "rollbackPath": null,
+      "validationResults": [
+        {
+          "commandId": "readygate-non-executing-syntax",
+          "status": "passed",
+          "reason": null
+        },
+        {
+          "commandId": "repository-validation",
+          "status": "not-run",
+          "reason": "Human-controlled repository validation is required before merge."
+        }
+      ]
+    },
+    {
+      "path": "tests/backend/ReadyGate.Showcase.Api.Tests/SCRUM9Tests.cs",
+      "family": "backend-test",
+      "contentHash": "4d2067e2e7cd041527239b2c0af96658e162cdf22456124e47408b9927e6427d",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003"
+      ],
+      "acceptanceScenarioIds": [
+        "US1-AS1",
+        "US1-AS2"
+      ],
+      "styleReferencePaths": [
+        "tests/backend/ReadyGate.Showcase.Api.Tests/CsvExportServiceFixtureTests.cs"
+      ],
+      "destructive": false,
+      "rollbackPath": null,
+      "validationResults": [
+        {
+          "commandId": "readygate-non-executing-syntax",
+          "status": "passed",
+          "reason": null
+        },
+        {
+          "commandId": "repository-validation",
+          "status": "not-run",
+          "reason": "Human-controlled repository validation is required before merge."
+        }
+      ]
+    },
+    {
+      "path": "tests/backend/ReadyGate.Showcase.Api.Tests/SCRUM9DatabaseTests.cs",
+      "family": "database-test",
+      "contentHash": "85e30353b5ce1e8141a1fbfd53fc2c2f1ca8a72f515662160e886f2f137173b7",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003"
+      ],
+      "acceptanceScenarioIds": [
+        "US1-AS1",
+        "US1-AS2"
+      ],
+      "styleReferencePaths": [
+        "tests/backend/ReadyGate.Showcase.Api.Tests/CsvExportServiceFixtureTests.cs"
+      ],
+      "destructive": false,
+      "rollbackPath": null,
+      "validationResults": [
+        {
+          "commandId": "readygate-non-executing-syntax",
+          "status": "passed",
+          "reason": null
+        },
+        {
+          "commandId": "repository-validation",
+          "status": "not-run",
+          "reason": "Human-controlled repository validation is required before merge."
+        }
+      ]
+    },
+    {
+      "path": "tests/xray/scrum-9.feature",
+      "family": "qa-xray-case",
+      "contentHash": "7b6e0aaca0be11ebaa035263fda1c64b0f18578edd9e08a4c52f1e3631ee056a",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003"
+      ],
+      "acceptanceScenarioIds": [
+        "US1-AS1",
+        "US1-AS2"
+      ],
+      "styleReferencePaths": [
+        "tests/xray/scrum-7-access-request-readiness.feature"
+      ],
+      "destructive": false,
+      "rollbackPath": null,
+      "validationResults": [
+        {
+          "commandId": "readygate-non-executing-syntax",
+          "status": "passed",
+          "reason": null
+        },
+        {
+          "commandId": "repository-validation",
+          "status": "not-run",
+          "reason": "Human-controlled repository validation is required before merge."
+        }
+      ]
+    }
+  ]
+}
