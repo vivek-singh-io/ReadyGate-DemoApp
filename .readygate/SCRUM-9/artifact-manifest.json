@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "db19e675-50be-48a0-943e-e0120180116e",
+  "generationContextHash": "e9379787f30fdc9138c7704e7be3816e071fc134e789db296411c206f506c39c",
+  "repository": "vivek-singh-io/ReadyGate-DemoApp",
+  "revision": "5bf586589d711cc85785e2e9d824f8e7318b61e4",
+  "branch": "SCRUM-9-ticket-draft-filter-ticket-list-by-status-and-priority",
+  "generatorVersion": "readygate-sdd-v1",
+  "capabilityVersion": "angular-dotnet-v1",
+  "createdAt": "2026-08-14T11:07:28.6603497+00:00",
+  "generatedBy": "gajapathi",
+  "artifacts": [
+    {
+      "path": ".readygate/SCRUM-9/spec.md",
+      "family": "specification",
+      "contentHash": "b82f347536461984a02f558e573406a1cb5c1886465a55ceff79c74828c1f669",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011"
+      ],
+      "acceptanceScenarioIds": [
+        "US1-AS1",
+        "US1-AS2"
+      ],
+      "styleReferencePaths": [],
+      "destructive": false,
+      "rollbackPath": null,
+      "validationResults": [
+        {
+          "commandId": "readygate-non-executing-syntax",
+          "status": "passed",
+          "reason": null
+        },
+        {
+          "commandId": "repository-validation",
+          "status": "not-run",
+          "reason": "Human-controlled repository validation is required before merge."
+        }
+      ]
+    }
+  ]
+}
