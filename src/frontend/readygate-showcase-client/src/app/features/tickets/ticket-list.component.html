@@ -1,0 +1,109 @@
+<section class="page" aria-labelledby="ticket-list-title">
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Support operations</p>
+      <h1 id="ticket-list-title">Flagged tickets</h1>
+      <p class="page-description">Filter the queue, select records, and prepare a controlled CSV export.</p>
+    </div>
+
+    @if (canExport()) {
+      <button
+        class="primary-button"
+        type="button"
+        [disabled]="selectedCount() === 0 || exporting()"
+        (click)="exportSelected()"
+      >
+        {{ exporting() ? 'Preparing export...' : 'Export selected (' + selectedCount() + ')' }}
+      </button>
+    }
+  </header>
+
+  <div class="filter-panel" aria-label="Ticket filters">
+    <label>
+      <span>Status</span>
+      <select [(ngModel)]="status" (ngModelChange)="onFilterChange()">
+        <option value="">All statuses</option>
+        @for (option of statuses; track option) {
+          <option [value]="option">{{ option }}</option>
+        }
+      </select>
+    </label>
+
+    <label>
+      <span>Priority</span>
+      <select [(ngModel)]="priority" (ngModelChange)="onFilterChange()">
+        <option value="">All priorities</option>
+        @for (option of priorities; track option) {
+          <option [value]="option">{{ option }}</option>
+        }
+      </select>
+    </label>
+
+    <span class="filter-note">Filters update after 250 ms and remain in the page URL.</span>
+  </div>
+
+  @if (exportError()) {
+    <p class="alert" role="alert">{{ exportError() }}</p>
+  }
+
+  <div class="ticket-card" [attr.aria-busy]="loading()">
+    @if (loading()) {
+      <div class="loading-state" role="status">Loading tickets...</div>
+    } @else if (error()) {
+      <div class="error-state" role="alert">
+        <p>{{ error() }}</p>
+        <button class="secondary-button" type="button" (click)="retry()">Retry</button>
+      </div>
+    } @else if (tickets().length === 0) {
+      <app-empty-state
+        title="No tickets match"
+        message="Change the status or priority filters to broaden the results."
+      />
+    } @else {
+      <div class="table-scroll">
+        <table>
+          <caption class="sr-only">Filtered support tickets</caption>
+          <thead>
+            <tr>
+              <th class="selection-cell">
+                <input
+                  type="checkbox"
+                  aria-label="Select all visible tickets"
+                  [checked]="allVisibleSelected()"
+                  (change)="toggleAllVisible($any($event.target).checked)"
+                />
+              </th>
+              <th>Ticket</th>
+              <th>Customer</th>
+              <th>Status</th>
+              <th>Priority</th>
+              <th>Updated</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (ticket of tickets(); track trackTicket($index, ticket)) {
+              <tr>
+                <td class="selection-cell">
+                  <input
+                    type="checkbox"
+                    [attr.aria-label]="'Select ' + ticket.reference"
+                    [checked]="selectedIds().has(ticket.id)"
+                    (change)="toggleTicket(ticket.id, $any($event.target).checked)"
+                  />
+                </td>
+                <td>
+                  <strong>{{ ticket.reference }}</strong>
+                  <span class="subject">{{ ticket.subject }}</span>
+                </td>
+                <td>{{ ticket.customerName }}</td>
+                <td><span class="status-badge">{{ ticket.status }}</span></td>
+                <td><span class="priority" [attr.data-priority]="ticket.priority">{{ ticket.priority }}</span></td>
+                <td>{{ ticket.updatedAt | date: 'mediumDate' }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    }
+  </div>
+</section>

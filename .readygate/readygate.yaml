@@ -1,14 +1,14 @@
 schemaVersion: "1.1"
-profileVersion: "1.1.0-demoapp-draft"
+profileVersion: "1.2.0-demoapp-fixtures"
 stack:
   languages:
     - name: CSharp
-      version: "13"
+      version: "14"
     - name: TypeScript
       version: "6.0"
   frameworks:
     - name: dotnet
-      version: "9"
+      version: "10"
     - name: Angular
       version: "22.1"
   packageManagers: [NuGet, npm]
@@ -33,6 +33,7 @@ paths:
     - src/backend/ReadyGate.Showcase.Api/Infrastructure/Seed
 architecture:
   documents:
+    - docs/architecture.md
     - docs/fixture-manifest.md
     - docs/reference-implementations.md
     - .readygate/READYGATE.md
@@ -51,6 +52,8 @@ architecture:
       paths: [src/frontend/readygate-showcase-client/src/app/core]
     - id: frontend-shared
       paths: [src/frontend/readygate-showcase-client/src/app/shared]
+    - id: qa-xray
+      paths: [tests/xray]
 database:
   dialect: SQLite
   version: "3"
@@ -133,7 +136,7 @@ conventions:
   frontend: Use Angular standalone feature components, typed services, permission guards, and shared empty states.
   database: Use EF Core migrations for SQLite; generated migrations are reviewed and never executed by ReadyGate.
   fixtures: Use fictional customers and tickets only; intentional gaps must remain documented in the fixture manifest.
-approvedPrecedents: []
+approvedPrecedents: [] # Populate only after two safe same-layer files are verified on a pinned revision.
 ownership:
   defaultReviewers: [vivek-singh-io, GajapathiKS]
 prohibitedPaths:

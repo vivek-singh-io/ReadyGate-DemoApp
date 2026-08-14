@@ -6,7 +6,7 @@ for the ReadyGate hackathon demonstration. It is not the ReadyGate product repos
 ## Architecture
 
 - Angular 22 standalone frontend under `src/frontend/readygate-showcase-client`.
-- .NET 9 minimal API under `src/backend/ReadyGate.Showcase.Api`.
+- .NET 10 minimal API under `src/backend/ReadyGate.Showcase.Api`.
 - Thin HTTP endpoints delegate to injected services.
 - Authorization policies remain separate from business services.
 - SQLite and EF Core migrations provide the intended persistence convention.
@@ -19,13 +19,13 @@ must not be selected as coding-style precedents.
 
 ## Hackathon fixtures
 
-The repository intentionally contains three evidence scenarios:
+The repository intentionally contains three canonical evidence scenarios:
 
-1. **Block:** an access-request footprint exists, while its Jira ticket omits authorization,
+1. **SCRUM-7 / Block intent:** an access-request footprint exists, while its Jira ticket omits authorization,
    concurrency, rejection, and notification detail.
-2. **Conditional:** CSV export works but intentionally lacks server-side `export_tickets`
+2. **SCRUM-8 / Conditional:** CSV export works but intentionally lacks server-side `export_tickets`
    enforcement, PII masking, audit logging, a 500-ticket limit, and defined empty-selection behavior.
-3. **Pass:** ticket-list, view-permission, empty-state, status/priority filtering, API filtering, and
+3. **SCRUM-9 / Pass:** ticket-list, view-permission, empty-state, status/priority filtering, API filtering, and
    debounce patterns exist and can be verified from stable source paths.
 
 These gaps are test fixtures, not production recommendations. Keep the build green and document the
@@ -45,6 +45,18 @@ ReadyGate-generated work must:
 - never execute generated SQL, migrations, seeds, or rollback scripts;
 - record requirement, Jira, repository, reference-file, generator, and validation provenance;
 - target a human-approved Jira-key branch and never protected `main`.
+
+Generated test work must follow the repository-local family:
+
+- Angular unit tests use Vitest with Angular TestBed and typed dependency-injection stubs.
+- Backend and database tests use xUnit; database tests use isolated SQLite state.
+- QA exchange cases use standard Cucumber/Gherkin under `tests/xray` with the Jira key as a tag.
+- Xray feature generation creates import artifacts only; it never claims import or execution success.
+
+The CSV-export endpoint and service are deliberate gap fixtures and must not be selected as secure
+authorization, masking, audit, or validation precedents. Use `docs/reference-implementations.md` to
+verify two safe same-layer references. If two do not exist on the pinned revision, omit the affected
+artifact family and explain the missing evidence.
 
 If the profile, architecture guidance, dependencies, and observed code disagree, stop the affected
 artifact family and ask the repository owner to resolve the conflict. Do not guess.

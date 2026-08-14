@@ -1,0 +1,86 @@
+:host {
+  display: block;
+  min-height: 100dvh;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 10;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  background: #0f766e;
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 4.5rem;
+  padding: 0 2rem;
+  border-bottom: 1px solid #dbe4ea;
+  background: #fff;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #0f2942;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border-radius: 0.75rem;
+  color: #fff;
+  background: #0f766e;
+  font-weight: 800;
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand small {
+  margin-top: 0.1rem;
+  color: #5f7182;
+  font-size: 0.75rem;
+}
+
+.environment-badge {
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  color: #115e59;
+  background: #ccfbf1;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+main {
+  padding: 2rem;
+}
+
+@media (max-width: 640px) {
+  .app-header,
+  main {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .brand small {
+    display: none;
+  }
+}
