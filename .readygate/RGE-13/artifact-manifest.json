@@ -1,0 +1,209 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "f93a912d-6f25-4aa5-ad05-1a0e0274a772",
+  "generationContextHash": "8292b268b9a2c64e9082d8644661173389df117a0281c7db5bd7814e45ee7f8d",
+  "repository": "vivek-singh-io/ReadyGate-DemoApp",
+  "revision": "148c85a89845637d8738829125b24dc4a6139ef2",
+  "branch": "RGE-13-ticket-draft-create-a-support-ticket-from-the-queue-page-148c85a",
+  "generatorVersion": "readygate-sdd-v1",
+  "capabilityVersion": "angular-dotnet-v1",
+  "createdAt": "2026-08-17T07:50:32.0851649+00:00",
+  "generatedBy": "demo-user",
+  "artifacts": [
+    {
+      "path": ".readygate/RGE-13/spec.md",
+      "family": "specification",
+      "contentHash": "6efc44fb13e132d96802eb5a120ceb0d4c8bca5be8990f1e47abbaea5673b6cf",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011"
+      ],
+      "acceptanceScenarioIds": [
+        "US1-AS1",
+        "US1-AS10",
+        "US1-AS11",
+        "US1-AS2",
+        "US1-AS3",
+        "US1-AS4",
+        "US1-AS5",
+        "US1-AS6",
+        "US1-AS7",
+        "US1-AS8",
+        "US1-AS9"
+      ],
+      "styleReferencePaths": [
+        "docs/architecture.md"
+      ],
+      "destructive": false,
+      "rollbackPath": null,
+      "validationResults": [
+        {
+          "commandId": "readygate-non-executing-syntax",
+          "status": "passed",
+          "reason": null
+        },
+        {
+          "commandId": "repository-validation",
+          "status": "not-run",
+          "reason": "Human-controlled repository validation is required before merge."
+        }
+      ]
+    },
+    {
+      "path": "src/frontend/readygate-showcase-client/src/app/core/services/rge-13.spec.ts",
+      "family": "frontend-test",
+      "contentHash": "5d489ad8b8af1ac93678a3c6653fffa539073c80c1c53f4b549a7bda18adc2b8",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011"
+      ],
+      "acceptanceScenarioIds": [
+        "US1-AS1",
+        "US1-AS10",
+        "US1-AS11",
+        "US1-AS2",
+        "US1-AS3",
+        "US1-AS4",
+        "US1-AS5",
+        "US1-AS6",
+        "US1-AS7",
+        "US1-AS8",
+        "US1-AS9"
+      ],
+      "styleReferencePaths": [
+        "src/frontend/readygate-showcase-client/src/app/core/services/ticket-api.service.spec.ts",
+        "src/frontend/readygate-showcase-client/src/app/features/tickets/ticket-list.component.spec.ts"
+      ],
+      "destructive": false,
+      "rollbackPath": null,
+      "validationResults": [
+        {
+          "commandId": "readygate-non-executing-syntax",
+          "status": "passed",
+          "reason": null
+        },
+        {
+          "commandId": "repository-validation",
+          "status": "not-run",
+          "reason": "Human-controlled repository validation is required before merge."
+        }
+      ]
+    },
+    {
+      "path": "tests/backend/ReadyGate.Showcase.Api.Tests/RGE13Tests.cs",
+      "family": "backend-test",
+      "contentHash": "b197b6195dc33cacc5d6656990e04a75927db1782d03f2392ea65e5ee33bb3d3",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011"
+      ],
+      "acceptanceScenarioIds": [
+        "US1-AS1",
+        "US1-AS10",
+        "US1-AS11",
+        "US1-AS2",
+        "US1-AS3",
+        "US1-AS4",
+        "US1-AS5",
+        "US1-AS6",
+        "US1-AS7",
+        "US1-AS8",
+        "US1-AS9"
+      ],
+      "styleReferencePaths": [
+        "tests/backend/ReadyGate.Showcase.Api.Tests/CsvExportServiceFixtureTests.cs",
+        "tests/backend/ReadyGate.Showcase.Api.Tests/TicketDatabaseTests.cs"
+      ],
+      "destructive": false,
+      "rollbackPath": null,
+      "validationResults": [
+        {
+          "commandId": "readygate-non-executing-syntax",
+          "status": "passed",
+          "reason": null
+        },
+        {
+          "commandId": "repository-validation",
+          "status": "not-run",
+          "reason": "Human-controlled repository validation is required before merge."
+        }
+      ]
+    },
+    {
+      "path": "tests/xray/rge-13.feature",
+      "family": "qa-xray-case",
+      "contentHash": "e43707f113e6e30860bb36402113dd35694e19b97cdd6cf2aab8bd7c5d98eee5",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011"
+      ],
+      "acceptanceScenarioIds": [
+        "US1-AS1",
+        "US1-AS10",
+        "US1-AS11",
+        "US1-AS2",
+        "US1-AS3",
+        "US1-AS4",
+        "US1-AS5",
+        "US1-AS6",
+        "US1-AS7",
+        "US1-AS8",
+        "US1-AS9"
+      ],
+      "styleReferencePaths": [
+        "tests/xray/scrum-7-access-request-readiness.feature",
+        "tests/xray/scrum-8-pii-export-readiness.feature"
+      ],
+      "destructive": false,
+      "rollbackPath": null,
+      "validationResults": [
+        {
+          "commandId": "readygate-non-executing-syntax",
+          "status": "passed",
+          "reason": null
+        },
+        {
+          "commandId": "repository-validation",
+          "status": "not-run",
+          "reason": "Human-controlled repository validation is required before merge."
+        }
+      ]
+    }
+  ]
+}
